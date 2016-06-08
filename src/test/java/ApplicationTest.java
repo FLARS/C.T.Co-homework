@@ -10,9 +10,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-/**
- * Created by Alex on 08/06/2016.
- */
+
 public class ApplicationTest {
     List<Payment> testPayments;
     Calculator calculator;
@@ -37,20 +35,27 @@ public class ApplicationTest {
 
         List<Payment> resultPayments = createStandratPayment();
 
+
         compareTwoArrays(resultPayments);
     }
 
 
     @Test
-    public void testDeleteLastPayment() throws Exception {
-        Payment testPayment = new Payment("Boris","milk",30);
-        testPayments.add(testPayment);
-
+    public void testDeleteLastPayment_Case1() throws Exception {
         List<Payment> resultPayments = createStandratPayment();
+        application.deleteLastPayment();
 
-        Assert.assertEquals(testPayments.size(),resultPayments.size());
-
+        Assert.assertEquals(0,resultPayments.size());
     }
+
+    @Test
+    public void testDeleteLastPayment_Case2() throws Exception {
+        List<Payment> resultPayments = application.payments;
+        application.deleteLastPayment();
+
+        Assert.assertEquals(0,resultPayments.size());
+    }
+
 
     @Test
     public void testMainMenuOptionsSwitcher() throws Exception {

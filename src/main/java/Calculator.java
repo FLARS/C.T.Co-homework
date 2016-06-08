@@ -58,7 +58,7 @@ public class Calculator {
             expense.setSumPaid(Math.abs(sum));
             if (sum > 0) {
                 positiveExpenses.add(expense);
-            } else {
+            } else if(sum < 0) {
                 negativeExpenses.add(expense);
             }
 

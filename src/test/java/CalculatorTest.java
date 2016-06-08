@@ -5,9 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Alex on 08/06/2016.
- */
+
 public class CalculatorTest {
     List<Payment> payments;
     List<Transaction> testTransactions;

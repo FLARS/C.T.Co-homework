@@ -40,7 +40,12 @@ public class Application {
     }
 
     public void deleteLastPayment() {
-        payments.remove(payments.size());
+        if (payments.size() == 0) {
+            System.out.println("You cant delete payment," +
+                    " because there are no payments left ");
+            return;
+        }
+        payments.remove(payments.size()-1);
     }
 
     public void calculate() {
